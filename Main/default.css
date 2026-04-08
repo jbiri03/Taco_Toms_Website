@@ -1,0 +1,330 @@
+
+/* hamburger menu display*/
+.hamburger-menu{
+    display: none;
+}
+
+
+/* General Styles */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#logo, nav, #orderNow{
+    transition: all 0.5s ease;
+}
+
+
+/*header styles*/
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: nowrap;
+}
+
+
+
+
+
+header img{
+    width: 150px;
+    height: auto;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    border: none;
+}
+
+
+
+
+
+/* Navigation Styles */
+
+
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+ul li{
+    margin: 0 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+ul li a:hover{
+    color: red;
+    transition: color 0.3s, text-decoration 0.3s;
+    ;
+}
+
+
+#orderNow{
+    background-color: red;
+    padding: 10px 30px;
+    border: red solid 4px;
+    font-weight: bold;
+    flex-wrap: nowrap;
+    font-size: 18px !important;
+}
+
+#orderNow:hover{
+    background-color: white;
+    color: red;
+    border: red solid 4px;
+    transition: background-color 0.3s, color 0.3s, font-weight 0.3s, border 0.3s;
+}
+
+/* Welcome Message Styles */
+.welcome-message p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+    background-color:green;
+    color: white;
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-image{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-image button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: larger;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+}
+
+button:hover{
+    background-color: black;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 1500px) {
+        ul li{
+        font-size: 23px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 20px;
+
+    }
+
+    #orderNow{
+        padding: 10px !important;
+        margin: 0px;
+        font-size: 16px !important;
+    }
+
+    header img{
+        width: 150 !important;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+        ul li{
+        font-size: 18px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 20px;
+
+    }
+
+    #orderNow{
+        padding: 8px 0px !important;
+        margin: 0px;
+        font-size: 10px !important;
+    }
+
+    header img{
+        width: 80px !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    ul li{
+        font-size: 14px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 18px;
+
+    }
+
+    #orderNow{
+        padding: 5px 0px !important;
+        margin: 0px;
+        font-size: 10px !important;
+    }
+
+    header img{
+        width: 70px !important;
+    }
+}
+
+
+
+    
+@media screen and (max-width: 768px){
+
+    header > div:first-of-type nav ul{
+        display: none;
+    }
+    .hamburger-menu{
+            display: block;
+            cursor: pointer;
+            position: relative;
+            height: 50px;
+            width: 50px;
+            /* margin-left: 20rem; */
+            position: absolute;
+            right: 20px;
+        }
+
+    .hamburger-menu span{
+            display: block;
+            width: 35px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0px;
+            margin-top: 10;
+        }
+        
+
+    .hamburger-menu.active span:nth-child(1){
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-menu.active span:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3){
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+        
+    #orderNow{
+            font-size: 20px !important;
+    }
+
+    .welcome-message p{
+        font-size: 14px;
+    }
+
+    .hero-image button{
+        padding: 10px 20px;
+        font-size: medium;
+    }
+
+    .off-screen-menu nav ul{
+    flex-direction: column !important;
+    gap: 40px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+}
+
+.off-screen-menu nav ul li{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.off-screen-menu.active{
+    top: 0;
+}
+
+    
+} 
+
+/*off screen menu styles*/
+.off-screen-menu{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position:fixed;
+    top: -750px;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+
+
+
+
+   
+
+
+
+/* .featured-items ul{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.featured-items ul li{
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.featured-items ul li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.featured-items h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+} */
+
+
